@@ -9,6 +9,11 @@
   margin-top: 1%;
 }
 
+.job:hover {
+  background-color: pink;
+}
+
 .list {
   font-size: .8em;
 }
+
