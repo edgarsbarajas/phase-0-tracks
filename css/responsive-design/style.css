@@ -30,3 +30,31 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
+main {
+  width: 756px;
+  vertical-align: top;
+}
+
+.sidebyside {
+  display: inline-block;
+  vertical-align: top;
+}
+
+#external-links {
+  width: 20%;
+}
+body {
+  max-width: 960px;
+}
+
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: 1em;
+  }
+  blockquote {
+    border-left: 5px solid green;
+  }
+  img {
+    width: 60%;
+  }
+}
