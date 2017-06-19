@@ -1,0 +1,22 @@
+Release 0: Equip Your New Robot
+How to use an elevator.
+
+Go in elevator:
+    -When wall is reached, scan for buttons
+    - If buttons found: 
+        -Read button labels one by one until desired number is found.
+        -When button is found: press it.
+        -Wait until doors open on desired floor.
+        -When doors open: exit the elevator.
+    - If no buttons, move to next wall, and call for ‘buttons found’ method.
+
+
+Release 1: Find a Real-Life Algorithm
+How to separate light/white clothes and dark clothes for doing laundry.
+
+Pick one piece of laundry until hamper is empty:
+    -Is item light or dark? 
+    -If clothes is light:
+        -Put into left pile.
+    -Else, put into right pile.
+End loop.
