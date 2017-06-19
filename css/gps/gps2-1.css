@@ -1,0 +1,48 @@
+header {
+  background-color: blue;
+}
+
+body {
+  width: 960px;
+}
+
+.column-1 {
+  background-color: purple;
+  float: left;
+  width: 48%;
+}
+
+.column-2 {
+  background-color: purple;
+  float: left;
+  width: 48%;
+}
+
+footer {
+  width: 100%;
+  height: 10%;
+  background-color: red;
+  clear: both;
+}
+
+h1 {
+    display: block;
+    font-size: 2em;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+}
+
+header p{
+    display: block;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+h1, h2 {
+  font-family: 'Indie Flower', cursive
+}
