@@ -1,32 +1,39 @@
-puts "What is your name?"
-name = gets.chomp
+puts "How many employees would you like to process?"
+numb_of_employees = gets.chomp.to_i
 
-puts "How old are you? What year were you born?"
-age = gets.chomp.to_i
-birth_year = gets.chomp.to_i
+until numb_of_employees == 0
+  puts "What is your name?"
+  name = gets.chomp
 
-puts "Our company cafeteria serves garlic bread. Should we order some for you?"
-garlic_bread = gets.chomp
+  puts "How old are you? What year were you born?"
+  age = gets.chomp.to_i
+  birth_year = gets.chomp.to_i
 
-puts "Would you like to enroll in the company’s health insurance?"
-health_insurance = gets.chomp
+  puts "Our company cafeteria serves garlic bread. Should we order some for you?"
+  garlic_bread = gets.chomp
 
-current_year = 2017
+  puts "Would you like to enroll in the company’s health insurance?"
+  health_insurance = gets.chomp
 
-if (name == "Drake Cula" || name == "Tu Fang")
-  puts "Definitely a vampire"
-elsif current_year - birth_year == age
-  if (garlic_bread == "yes" || health_insurance == "yes")
-    puts "Probably not a vampire."
-  else
-    puts "Results inconclusive."
+  current_year = 2017
+
+  if (name == "Drake Cula" || name == "Tu Fang")
+    puts "Definitely a vampire"
+  elsif current_year - birth_year == age
+    if (garlic_bread == "yes" || health_insurance == "yes")
+      puts "Probably not a vampire."
+    else
+      puts "Results inconclusive."
+    end
+  else #when age does not match birth_year
+    if (garlic_bread=="no" && health_insurance=="no")
+      puts "Almost certainly a vampire"
+    elsif (garlic_bread == "no" || health_insurance == "no")
+      puts "Probably a vampire"
+    else
+      puts "Results inconclusive."
+    end
   end
-else #when age does not match birth_year
-  if (garlic_bread=="no" && health_insurance=="no")
-    puts "Almost certainly a vampire"
-  elsif (garlic_bread == "no" || health_insurance == "no")
-    puts "Probably a vampire"
-  else
-    puts "Results inconclusive."
-  end
-end
+
+  numb_of_employees -= 1 #subtracts one each loop
+end #end of until loop
