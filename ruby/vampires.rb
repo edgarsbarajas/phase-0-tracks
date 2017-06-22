@@ -1,3 +1,7 @@
+current_year = 2017
+result = ""
+allergy = ""
+
 puts "How many employees would you like to process?"
 numb_of_employees = gets.chomp.to_i
 
@@ -15,25 +19,36 @@ until numb_of_employees == 0
   puts "Would you like to enroll in the company’s health insurance?"
   health_insurance = gets.chomp
 
-  current_year = 2017
+  # naming allergies: stops when "done" is enetered. If "sunshine" is entered, result is "Probably a vampire"
+  puts "Name your allergies: enter 'done' when finished"
 
-  if (name == "Drake Cula" || name == "Tu Fang")
-    puts "Definitely a vampire"
+
+  until allergy == "done" || allergy == "sunshine"
+    allergy = gets.chomp
+  end
+
+
+  if allergy == "sunshine"
+      result = "Probably a vampire"
+  elsif (name == "Drake Cula" || name == "Tu Fang")
+    result = "Definitely a vampire"
   elsif current_year - birth_year == age
     if (garlic_bread == "yes" || health_insurance == "yes")
-      puts "Probably not a vampire."
+      result = "Probably not a vampire."
     else
-      puts "Results inconclusive."
+      result = "Results inconclusive."
     end
   else #when age does not match birth_year
     if (garlic_bread=="no" && health_insurance=="no")
-      puts "Almost certainly a vampire"
+      result = "Almost certainly a vampire"
     elsif (garlic_bread == "no" || health_insurance == "no")
-      puts "Probably a vampire"
+      result = "Probably a vampire"
     else
-      puts "Results inconclusive."
+      result = "Results inconclusive."
     end
   end
+
+  puts "\nResult: #{result}"
 
   numb_of_employees -= 1 #subtracts one each loop
 end #end of until loop
