@@ -32,7 +32,10 @@ end
   Otherwise, revert to prev char.
 =end
 
+
+
 def decrypt(word)
+  alphabet = "abcdefghijklmnopqrstuvwxyz"
   index = 0
   while word.length > index
     if word[index] == "a"
@@ -41,7 +44,7 @@ def decrypt(word)
     elsif word[index] == " "
       index += 1
     else
-      word[index] = (word[index].ord-1).chr
+      word[index] = alphabet[alphabet.index(word[index])-1]
       index += 1
     end
   end
