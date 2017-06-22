@@ -10,7 +10,10 @@ def encrypt(word)
   index = 0
 
   while word.length > index
-    if word[index] == " "
+    if word[index] == "z"
+      word[index] = "a"
+      index+=1
+    elsif word[index] == " "
       index+=1
     else
       word[index] = word[index].next
@@ -18,7 +21,7 @@ def encrypt(word)
     end
   end
 
-  puts word
+  word
 end
 
 =begin
@@ -32,7 +35,10 @@ end
 def decrypt(word)
   index = 0
   while word.length > index
-    if word[index] == " "
+    if word[index] == "a"
+      word[index] = "z"
+      index+=1
+    elsif word[index] == " "
       index += 1
     else
       word[index] = (word[index].ord-1).chr
@@ -40,8 +46,11 @@ def decrypt(word)
     end
   end
 
-  puts word
+  word
 end
 
-encrypt("word")
-decrypt("xpse")
+# driver code
+p encrypt("abc")
+p encrypt("zed")
+p decrypt("bcd")
+p decrypt("afe")
