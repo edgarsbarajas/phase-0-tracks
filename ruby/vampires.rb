@@ -52,3 +52,5 @@ until numb_of_employees == 0
 
   numb_of_employees -= 1 #subtracts one each loop
 end #end of until loop
+
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends"
