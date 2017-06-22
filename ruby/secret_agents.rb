@@ -32,8 +32,6 @@ end
   Otherwise, revert to prev char.
 =end
 
-
-
 def decrypt(word)
   alphabet = "abcdefghijklmnopqrstuvwxyz"
   index = 0
@@ -57,3 +55,5 @@ p encrypt("abc")
 p encrypt("zed")
 p decrypt("bcd")
 p decrypt("afe")
+p decrypt(encrypt("swordfish")) #Encrypt method implicitly returns a modified "swordfish" string. The decrypt method modifies it back to normal, implicitly returning "swordfish"
+
