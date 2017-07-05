@@ -82,3 +82,17 @@ end
 p even_numbers
 p even_digits
 
+#A method that will remove items from a data structure until the condition in the block evaluates to false, then stops (you may not find a perfectly working option for the hash, and that's okay).
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 2]
+digit_words = { 1 => "one", 2=> "two", 3=> "three", 4=> "four", 5=> "five", 6 => "six", 2 => "two"}
+
+dropped_array = numbers.drop_while do |x|
+  x < 3
+end
+
+selected_digits = digit_words.select do |key|
+  key > 3
+end
+
+p dropped_array
+p selected_digits
