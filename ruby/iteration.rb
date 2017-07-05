@@ -58,7 +58,6 @@ p numbers
 p digit_words
 
 #A method that filters a data structure for only items that do satisfy a certain condition (for example, keeping any numbers that are less than 5).
-
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 digit_words = { 1 => "one", 2=> "two", 3=> "three", 4=> "four", 5=> "five", 6 => "six"}
 
@@ -67,3 +66,19 @@ digit_words.keep_if { |key| key < 5 }
 
 p numbers
 p digit_words
+
+#A different method that filters a data structure for only items satisfying a certain condition -- Ruby offers several options!
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+digit_words = { 1 => "one", 2=> "two", 3=> "three", 4=> "four", 5=> "five", 6 => "six"}
+
+even_numbers = numbers.select do |x|
+  x.even?
+end
+
+even_digits = digit_words.select do |key|
+  key.even?
+end
+
+p even_numbers
+p even_digits
+
