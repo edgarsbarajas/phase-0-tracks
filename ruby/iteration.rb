@@ -1,9 +1,9 @@
-def count_to_5
-  index = 1
-  until index == 5
-    yield("Edgar", index)
-    index += 1
+def add_5 (name, start_num)
+  5.times do
+    yield(name, start_num)
+    start_num+=1
   end
+
 end
 
-count_to_5 { |name, index| puts "#{name} is counting: #{index}" }
+add_5("Edgar", 10) { |name, start_num| puts "#{name} is counting: #{start_num}" }
