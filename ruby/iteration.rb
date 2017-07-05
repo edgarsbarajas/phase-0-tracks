@@ -36,3 +36,24 @@ end
 
 puts "after map: "
 p animals
+
+# Use the documentation to find other Array and Hash methods that take blocks, and that can accomplish the tasks below
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+digit_words = { 1 => "one", 2=> "two", 3=> "three", 4=> "four", 5=> "five", 6 => "six"}
+p numbers
+p digit_words
+
+#A method that iterates through the items, deleting any that meet a certain condition (for example, deleting any numbers that are less than 5).
+
+numbers.delete_if do |x|
+  x < 5
+end
+
+digit_words.delete_if do |key|
+  key < 5
+end
+
+p numbers
+p digit_words
+
