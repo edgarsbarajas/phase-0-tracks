@@ -52,4 +52,14 @@ def fake_name(name)
   name = name.join(" ")
 end
 
-p fake_name("Felicia Torres")
+#Provide a user interface that lets a user enter a name and get a fake name back.
+#Let the user do this repeatedly until they decide to quit by typing 'quit'.
+loop do
+  print "Enter a name ('quit' to exit): "
+  name = gets.chomp
+
+  break if name == "quit"
+
+  puts "Fake name is #{fake_name(name)}"
+end
+
