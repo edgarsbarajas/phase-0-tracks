@@ -54,12 +54,22 @@ end
 
 #Provide a user interface that lets a user enter a name and get a fake name back.
 #Let the user do this repeatedly until they decide to quit by typing 'quit'.
+alias_storage = {}
+
 loop do
   print "Enter a name ('quit' to exit): "
   name = gets.chomp
 
   break if name == "quit"
 
-  puts "Fake name is #{fake_name(name)}"
+  new_name = fake_name(name)
+
+  puts "Fake name is #{new_name}"
+
+  #store alias in alias_storage hash
+  alias_storage[name] = new_name
 end
 
+alias_storage.each do |original, fake|
+  puts "#{fake} is actually #{original}"
+end
