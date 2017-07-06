@@ -1,11 +1,11 @@
-#split first and last name into an array of two
-#swap the places of first and last name
-#split each element into an array of characters
-#iterate through an element
-#check if the character is a vowel, if it is: make it the next vowel in the vowel array.
-#if it not a vowel: make it next consonant.
-#join the array of characters
-#join the array of 2 two words
+#Dwncase all characters
+#split into array of characters
+#Manipulate all data
+#Join back to one string
+#Split into 2 strings to reverse the first and last name
+#Iterate the string array to capitalize first letter of each name
+#Join the array to complete
+
 
 def swap_letters(word)
   vowels = ["a", "e", "i", "o", "u"]
@@ -17,6 +17,8 @@ def swap_letters(word)
       else
         letter = vowels[vowels.index(letter)+1]
       end
+    elsif letter == " "
+      letter
     else
       letter = letter.next
     end
@@ -25,18 +27,29 @@ end
 
 def fake_name(name)
 
+  # downcase the string, and convert to character array
   name.downcase!
+  name = name.split("")
+
+  #manipulate the data
+  swap_letters(name)
+
+  #join back to one string
+  name = name.join("")
+
+  #split into 2 separate strings
   name = name.split(" ")
+
+  #Reverse the first and last name
   name.reverse!
 
-  last_name = name[0].split("")
-  first_name = name[1].split("")
+  #capitalize each name
+  name.map! do |name|
+    name.capitalize!
+  end
 
-  swap_letters(last_name)
-  swap_letters(first_name)
-
-
-
+  #join as one string to complete
+  name = name.join(" ")
 end
 
 p fake_name("Felicia Torres")
