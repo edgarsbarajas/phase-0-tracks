@@ -8,5 +8,9 @@
 # Fur Color: varies
 # Eye Color: varies
 
-
+# BEHAVIOR -------------
+# Sleep
+# Eat
+# Poop
+# Run
 
