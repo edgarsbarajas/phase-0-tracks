@@ -14,3 +14,10 @@
 # Poop
 # Run
 
+class Puppy
+end
+
+spot = Puppy.new
+
+p spot.instance_of?(Puppy)
+
