@@ -18,6 +18,32 @@ class Santa
   def about
     puts "Santa is a #{@ethnicity} #{@gender}"
   end
+
+  def celebrate_birthday
+    @age += 1
+  end
+
+  def get_mad_at(name)
+    @reindeer_ranking.insert(-1, @reindeer_ranking.delete_at(@reindeer_ranking.index(name)))
+  end
+
+  #setters
+  def gender= (new_gender)
+    @gender = new_gender
+  end
+
+  # getters
+  def age
+    @age
+  end
+
+  def ethnicity
+    @ethnicity
+  end
+
+  def reindeer_ranking
+    @reindeer_ranking
+  end
 end
 
 Bob = Santa.new("Male", "Mexican")
@@ -33,6 +59,25 @@ example_genders.length.times do |i|
   santas << Santa.new(example_genders[i], example_ethnicities[i])
   santas[i].about
 end
+
+#--------
+
+reindeer = Santa.new("Female", "Do-Do")
+
+p reindeer.age
+reindeer.celebrate_birthday
+p reindeer.age
+
+p reindeer.reindeer_ranking
+reindeer.get_mad_at("Vixen")
+p reindeer.reindeer_ranking
+
+p reindeer.ethnicity
+
+p reindeer.gender=("BOOOO")
+
+reindeer.about
+
 
 
 
