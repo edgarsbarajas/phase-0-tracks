@@ -1,6 +1,6 @@
 class Santa
-attr_reader :age, :ethnicity, :reindeer_ranking
-attr_accessor :gender
+attr_reader :ethnicity, :reindeer_ranking
+attr_accessor :gender, :age
 
   def initialize(gender, ethnicity)
     @gender = gender
@@ -62,6 +62,20 @@ p reindeer.ethnicity
 p reindeer.gender=("BOOOO")
 
 reindeer.about
+
+#-----------------
+# SANTA SIMULATION
+#-----------------
+# creating 100 new santas
+counter = 100
+
+while counter > 0
+  santa = Santa.new(example_genders.sample, example_ethnicities.sample)
+  santa.age=(rand(140))
+
+  puts "Age: #{santa.age}"
+  counter -= 1
+end
 
 
 
