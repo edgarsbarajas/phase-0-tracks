@@ -14,6 +14,11 @@
       // If the values match, a key-value match has been found
 // Return whether or not a key-value match was found
 
+// Loop the number of times passed to the function
+// In loop above, loop random number of times determining the length of the word being created
+// Inside 2nd loop from above, add random letter from alphabet to empty string
+// Add that created word to an array containing random words
+// clear the word for next iteration of random word creation
 
 function FindLongestString(arrayOfStrings){
   var longestStringLength = 0;
@@ -46,6 +51,23 @@ function findMatches(object1, object2){
   return match;
 }
 
+function randomStrings(numberOfStrings){
+  var strings = [];
+  var text = "";
+  var alphabet = "abcdefghijklmnopqrstuvwxyz";
+
+  for( ; numberOfStrings > 0; numberOfStrings-=1){
+    for(var i = 0; i < Math.floor((Math.random() * 10)+1); i++){
+      text += alphabet[(Math.floor(Math.random() * alphabet.length))];
+    }
+
+    strings.push(text);
+    text = "";
+  }
+
+  return strings;
+}
+
 // Driver for FindLongestString
 var s = FindLongestString(["long phrase","longest phrase","longer phrase"]);
 console.log(s);
@@ -65,6 +87,14 @@ console.log(match); //true
 
 match = findMatches({boo: "Dog", legs: 4}, {hoo: "Dog", wheels: 3});
 console.log(match); //false
+
+//Driver code for randomStrings function
+//Add driver code that does the following 10 times: generates an array, prints the array, feeds the array to your "longest word" function, and prints the result.
+for(var i = 0; i < 10; i++){
+  var s = randomStrings(Math.floor(Math.random() * 10) + 1);
+  console.log((i+1) + ". " + s);
+  console.log("Longest Word: " + FindLongestString(s) + "\n");
+}
 
 
 
