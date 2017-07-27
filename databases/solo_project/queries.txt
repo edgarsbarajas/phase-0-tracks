@@ -28,3 +28,36 @@
 5. Delete an item that meets some condition (you can choose a condition that makes sense).
 
   DELETE FROM models WHERE name="Charger";
+
+RELEASE 3
+Try a few different joins in your database, and record the commands and the output in queries.txt
+
+  SELECT * FROM models INNER JOIN makes ON makes.id = models.make_id;
+
+  1|Mustang|160|false|1|1|Ford
+  2|Challenger|180|false|3|3|Dodge
+  4|Corvette|200|false|2|2|Chevrolet
+  5|Focus RS|140|true|1|1|Ford
+
+  -------------------
+
+  SELECT * FROM models FULL OUTER JOIN makes ON makes.id = models.make_id;
+
+  RIGHT and FULL OUTER JOINs are not currently supported
+
+  -------------------
+
+  SELECT makes.name, models.name, top_speed FROM models CROSS JOIN makes;
+
+  Ford|Mustang|160
+  Chevrolet|Mustang|160
+  Dodge|Mustang|160
+  Ford|Challenger|180
+  Chevrolet|Challenger|180
+  Dodge|Challenger|180
+  Ford|Corvette|200
+  Chevrolet|Corvette|200
+  Dodge|Corvette|200
+  Ford|Focus RS|140
+  Chevrolet|Focus RS|140
+  Dodge|Focus RS|140
