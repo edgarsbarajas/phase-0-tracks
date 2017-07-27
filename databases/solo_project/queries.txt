@@ -1,0 +1,30 @@
+1. Display the information in one table (either table is fine).
+  SELECT * FROM models;
+
+  1|Mustang|160|false|1
+  2|Challenger|165|false|3
+  3|Charger|140|true|3
+  4|Corvette|200|false|2
+  5|Focus RS|140|true|1
+
+2. Update an item that meets some condition (you can choose a condition that makes sense).
+
+  UPDATE models SET top_speed=180 WHERE name="Challenger";
+
+3. Display the information in both tables using one query.
+
+  SELECT * FROM models JOIN makes ON models.make_id = makes.id;
+
+4. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+  SELECT makes.name, models.name, models.top_speed FROM models JOIN makes ON models.make_id = makes.id;
+
+  Ford|Mustang|160
+  Dodge|Challenger|180
+  Dodge|Charger|140
+  Chevrolet|Corvette|200
+  Ford|Focus RS|140
+
+5. Delete an item that meets some condition (you can choose a condition that makes sense).
+
+  DELETE FROM models WHERE name="Charger";
