@@ -61,6 +61,14 @@ def get_all_food(db)
   db.execute("SELECT * FROM foods")
 end
 
+def log_food(db, name, calories_in_food)
+  db.execute("UPDATE persons SET calories_eaten=calories_eaten+? WHERE name=?", [calories_in_food, name])
+end
+
+def update_user_weight(db, name, weight)
+  db.execute("UPDATE persons SET weight=? WHERE name=?", [weight, name])
+end
+
 puts "Do you have an account with us?"
 answer = gets.chomp
 
@@ -92,6 +100,7 @@ if account_member
         puts "\nWhat would you like to do?"
         puts "1. View Your Information"
         puts "2. Log Food Eaten"
+        puts "3. Update Weight"
         puts "0. exit"
 
         menu_choice = gets.chomp.to_i
@@ -111,7 +120,7 @@ if account_member
 
           calories_in_food = db.execute("SELECT calories FROM foods WHERE id=?", [food_eaten])[0]["calories"]
 
-          db.execute("UPDATE persons SET calories_eaten=calories_eaten+? WHERE name=?", [calories_in_food, name])
+          log_food(db, name, calories_in_food)
 
           calories_left = get_account_info(db, name)["calorie_limit"] - get_account_info(db, name)["calories_eaten"]
 
@@ -120,6 +129,11 @@ if account_member
           else
             puts "You could eat #{calories_left} more calories"
           end
+        when 3
+          print "Enter your new weight: "
+          weight = gets.chomp.to_i
+
+          update_user_weight(db, name, weight)
         else
           puts "Invalid choice."
         end
@@ -131,7 +145,6 @@ if account_member
   else
     puts "Account not found!"
   end
-
 else
   puts "Would you like to create an account?"
   decision = gets.chomp
