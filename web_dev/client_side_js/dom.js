@@ -26,3 +26,21 @@ for(var i = 0; i < test.length; i++){
   test[i].style.background = "pink";
 }
 
+$(document).ready(function(){
+  $("button").click(function(){
+    $("p").hide();
+  })
+})
+
+$(document).ready(function(){
+  $("#button").click(function(){
+    document.body.style.background = "tan";
+    console.log("Background is now tan!")
+  })
+})
+
+$(document).ready(function(){
+  $("p").hover(function(){
+    alert("Hover!")
+  })
+})
