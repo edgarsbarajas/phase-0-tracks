@@ -24,4 +24,23 @@ post '/students' do
   redirect '/'
 end
 
+post "/student/update" do
+  db.execute("UPDATE students SET campus=?, age=? WHERE name=?", [params['campus'], params['age'].to_i, params['name']])
+  redirect '/'
+end
+
+get "/update_student" do
+  erb :update_student
+end
+
+get "/campuses" do
+  @campuses = db.execute("SELECT city FROM campuses")
+  erb :campuses
+end
+
+post "/add_campus" do
+  db.execute("INSERT INTO campuses (city) VALUES (?)", [params['city']])
+  redirect '/campuses'
+end
+
 # add static resources
