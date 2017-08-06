@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DCB World Domination</title>
+</head>
+<body>
+  <nav>
+    <p><a href="/">Home</a></p>
+  </nav>
+  <h1>DBC is Taking Over.</h1>
+  <h2>We are available in the following cities...</h2>
+  <p>Add a city:</p>
+  <form action="/add_campus" method="POST">
+    <input type="text" name="city" placeholder="City">
+    <button type="submit">Submit</button>
+  </form>
+  <ul>
+    <% @campuses.each do |campus| %>
+      <li> <%= campus['city'] %> </li>
+    <% end %>
+  </ul>
+</body>
+</html>
